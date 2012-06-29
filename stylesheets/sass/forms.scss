@@ -1,0 +1,67 @@
+@import "bourbon/bourbon";
+
+//************************************************************************//
+// Form UI Library
+//************************************************************************//
+$form-border-color:       #ccc;
+$form-border-color-hover: #aaa;
+$form-border-color-focus: #56B4EF; //blue default
+$form-border-radius:      3px;
+
+$form-box-shadow-focus:   darken($form-border-color-focus, 5%);
+
+$form-font-size:          12px;
+$form-font-family:        $lucida-grande;
+
+
+input,
+label,
+select {
+  display: block;
+  font-family: $form-font-family;
+  font-size: $form-font-size;
+}
+
+textarea,
+#{$all-text-inputs} {
+  background-color: white;
+  border: 1px solid $form-border-color;
+  border-radius: $form-border-radius;
+  box-shadow: inset 0px 1px 3px hsla(0, 0%, 0%, 0.06);
+  @include box-sizing(border-box);
+  margin-bottom: 0.5em;
+  padding: 0.7em 0.45em;
+  @include transition(border-color);
+  width: 300px;
+
+  &:hover {
+    border-color: $form-border-color-hover;
+  }
+
+  &:focus {
+    border-color: $form-border-color-focus;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 5px rgba($form-box-shadow-focus, 0.7);
+    outline: none;
+  }
+}
+
+input[type="search"] {
+  @include appearance(none);
+  padding-left: 0;
+}
+
+input[type="color"] {
+  border: 0;
+  height: 3em;
+  padding: 0;
+  width: 5em;
+}
+
+button,
+input[type="submit"] {
+  border-color: #BBB;
+  @include box-shadow(0 1px 1px hsla(0, 0%, 0%, 0.12));
+  @include button(simple, #fafafa);
+  font-size: $form-font-size;
+  padding: 0.7em 1.9em;
+}
