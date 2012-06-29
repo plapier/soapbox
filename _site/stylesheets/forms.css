@@ -49,7 +49,11 @@ input[type="color"] {
   width: 5em; }
 
 input[type="checkbox"], input[type="radio"] {
-  display: inline; }
+  display: inline;
+  margin-right: 0.65em; }
+
+select {
+  width: 300px; }
 
 button,
 input[type="submit"] {

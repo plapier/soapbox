@@ -60,11 +60,18 @@ input[type="color"] {
 
 input[type="checkbox"], input[type="radio"] {
   display: inline;
+  margin-right: 0.65em;
+}
+
+select {
+  width: 300px;
 }
 
 button,
 input[type="submit"] {
   @include button(simple, #fafafa);
+
+  // Button Overrides
   border-color: #BBB;
   @include box-shadow(0 1px 1px hsla(0, 0%, 0%, 0.06));
   font-size: $form-font-size;
