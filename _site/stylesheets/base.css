@@ -1,9 +1,13 @@
 html {
-  width: 100%; }
+  width: 100%;
+  background-color: #EDF0F6; }
 
 body {
-  width: 400px;
-  margin: 0 auto; }
+  width: 300px;
+  margin: 0 auto;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  padding: 40px 0; }
 
 h1, h2 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

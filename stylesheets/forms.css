@@ -40,17 +40,19 @@ input[type="search"] {
   padding-left: 0; }
 
 input[type="color"] {
+  background-color: transparent;
   border: 0;
+  box-shadow: none;
   height: 3em;
   padding: 0;
+  position: relative;
   width: 5em; }
+
+input[type="checkbox"], input[type="radio"] {
+  display: inline; }
 
 button,
 input[type="submit"] {
-  border-color: #BBB;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
   border: 1px solid #d6d6d6;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -73,6 +75,10 @@ input[type="submit"] {
   text-decoration: none;
   text-shadow: 0 1px 0 white;
   -webkit-background-clip: padding-box;
+  border-color: #BBB;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
   font-size: 12px;
   padding: 0.7em 1.9em; }
   button:hover:not(:disabled),

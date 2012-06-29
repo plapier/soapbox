@@ -2,11 +2,15 @@
 
 html {
   width: 100%;
+  background-color: #EDF0F6;
 }
 
 body {
-  width: 400px;
+  width: 300px;
   margin: 0 auto;
+  font-family: $verdana;
+  font-size: 12px;
+  padding: 40px 0;
 }
 
 h1, h2 {

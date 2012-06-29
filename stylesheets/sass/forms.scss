@@ -7,9 +7,7 @@ $form-border-color:       #ccc;
 $form-border-color-hover: #aaa;
 $form-border-color-focus: #56B4EF; //blue default
 $form-border-radius:      3px;
-
 $form-box-shadow-focus:   darken($form-border-color-focus, 5%);
-
 $form-font-size:          12px;
 $form-font-family:        $lucida-grande;
 
@@ -51,17 +49,24 @@ input[type="search"] {
 }
 
 input[type="color"] {
+  background-color: transparent;
   border: 0;
+  box-shadow: none;
   height: 3em;
   padding: 0;
+  position: relative;
   width: 5em;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
 }
 
 button,
 input[type="submit"] {
-  border-color: #BBB;
-  @include box-shadow(0 1px 1px hsla(0, 0%, 0%, 0.12));
   @include button(simple, #fafafa);
+  border-color: #BBB;
+  @include box-shadow(0 1px 1px hsla(0, 0%, 0%, 0.06));
   font-size: $form-font-size;
   padding: 0.7em 1.9em;
 }
