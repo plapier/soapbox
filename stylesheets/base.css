@@ -15,3 +15,6 @@ h1, h2 {
 
 section {
   margin-bottom: 30px; }
+
+textarea {
+  resize: vertical; }
