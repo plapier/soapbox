@@ -19,6 +19,18 @@ select {
   font-size: $form-font-size;
 }
 
+label {
+  font-weight: bold;
+
+  &.required::after {
+    content: "*";
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
 textarea,
 #{$all-text-inputs} {
   background-color: white;

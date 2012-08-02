@@ -1,6 +1,7 @@
 @import "bourbon/bourbon";
 @import "pygments-theme-light";
 $base-background-color: #EDF0F6;
+$full-width: 800px;
 
 html {
   width: 100%;
@@ -67,4 +68,15 @@ textarea {
   pre {
     margin: 0;
   }
+}
+
+body.components {
+  section.content {
+    width: $full-width;
+  }
+}
+
+div.panel {
+  float: left;
+  width: $full-width / 2;
 }

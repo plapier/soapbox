@@ -12,7 +12,7 @@ title: SoapBox UI Library
     <link rel="stylesheet" href="stylesheets/components.css" media="screen">
     <link rel="stylesheet" href="stylesheets/forms.css" media="screen">
   </head>
-  <body>
+  <body class="components">
 
     <nav class="navigation">
       <ol>
@@ -23,23 +23,26 @@ title: SoapBox UI Library
     </nav>
 
     <section class="content">
+      <h1>Component Library</h1>
+      <p>Use these componenents via the markup and/or css provided.</p>
       <section>
         <h2>Arrow</h2>
-        <button>Arrow <span class="arrow"></span></button>
+        <div class="panel">
+          <button>Arrow <span class="arrow"></span></button>
+          <button>Arrow-small <span class="arrow-small"></span></button>
+        </div>
+        <div class="panel">
 
-        <button>Arrow-small<span class="arrow-small"></span></button>
 {% highlight html %}
 <span class="arrow"></span>
-
 <span class="arrow-small"></span>
 {% endhighlight %}
-
-<p>or</p>
 {% highlight scss %}
 @extend .arrow;
 @extend .arrow-small;
 {% endhighlight %}
 
+      </div>
 
       </section>
     </section>

@@ -158,3 +158,10 @@ textarea {
   margin: 5px 0; }
   .highlight pre {
     margin: 0; }
+
+body.components section.content {
+  width: 800px; }
+
+div.panel {
+  float: left;
+  width: 400px; }

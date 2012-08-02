@@ -11,8 +11,10 @@
   border-top-color: $arrow-color;
   display: inline-block;
   height: 0;
-  margin-top: 3px;
-  vertical-align: top;
+  // margin-top: 3px;
+  // vertical-align: top;
+  position: relative;
+  top: 5px;
   width: 0;
   opacity: 0.5;
 }
@@ -21,4 +23,5 @@
 .arrow-small {
   @extend .arrow;
   border-width: 5px;
+  top: 4px;
 }
