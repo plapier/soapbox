@@ -1,16 +1,17 @@
 @import "bourbon/bourbon";
+@import "pygments-theme-light";
+$base-background-color: #EDF0F6;
 
 html {
   width: 100%;
-  background-color: #EDF0F6;
+  background-color: $base-background-color;
 }
 
 body {
-  width: 300px;
-  margin: 0 auto;
   font-family: $verdana;
   font-size: 12px;
-  padding: 40px 0;
+  width: 100%;
+  margin: 0;
 }
 
 h1, h2 {
@@ -18,10 +19,52 @@ h1, h2 {
   font-size: 15px;
 }
 
+nav {
+  padding: 20px 0;
+  background-color: #D2D7E0;
+
+  ol {
+    width: 300px;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding-right: 10px;
+    display: inline-block;
+  }
+
+  a {
+    color: #555;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 section {
   margin-bottom: 30px;
 }
 
+section.content {
+  width: 300px;
+  margin: 0 auto;
+}
+
 textarea {
   resize: vertical;
+}
+
+.highlight {
+  background-color: white;
+  padding: 6px;
+  border-radius: 2px;
+  margin: 5px 0;
+  pre {
+    margin: 0;
+  }
 }
