@@ -1,0 +1,93 @@
+@import "bourbon/bourbon";
+@import "web/pygments-theme-dark";
+@import "web/pygments-theme-light";
+
+$base-background-color: #EDF0F6;
+$full-width: 800px;
+
+html {
+  width: 100%;
+  background-color: $base-background-color;
+}
+
+body {
+  font-family: $verdana;
+  font-size: 12px;
+  width: 100%;
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: $helvetica;
+  font-size: 15px;
+}
+
+nav {
+  padding: 20px 0;
+  background-color: #D2D7E0;
+
+  ol {
+    width: 300px;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding-right: 10px;
+    display: inline-block;
+  }
+
+  a {
+    color: #555;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+section.content {
+  width: 300px;
+  margin: 0 auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.highlight {
+  background-color: white;
+  padding: 6px;
+  border-radius: 2px;
+  margin: 5px 0;
+  overflow: scroll;
+
+  pre {
+    margin: 0;
+  }
+}
+
+body.components {
+  section.content {
+    width: $full-width;
+  }
+}
+
+div.panel {
+  float: left;
+  width: $full-width / 2;
+
+  &.one-thirds {
+    width: $full-width * (1/3);
+  }
+  &.two-thirds {
+    width: $full-width * (2/3);
+  }
+}

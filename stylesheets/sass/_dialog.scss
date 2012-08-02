@@ -1,0 +1,145 @@
+//************************************************************************//
+// New Task Blue Header Bar. Dialog Header-Bar.
+//************************************************************************//
+
+$header1: hsl(213, 5%, 55%);
+$header2: darken($header1, 15%);
+$d-base-background: hsl(0, 0%, 100%);
+$d-base-border-color: hsl(0, 0%, 20%);
+$d-base-border-color-alt: hsl(0, 0%, 94%);
+
+
+//************************************************************************//
+// MIXINS
+//************************************************************************//
+@mixin vertically-and-horizontally-centered ( $height, $width ) {
+  left: 50%;
+  margin-left: -$width / 2;
+  margin-top: -$height / 2;
+  min-height: $height;
+  min-width: $width;
+  position: fixed;
+  top: 35%;
+}
+
+
+//************************************************************************//
+// Transparent black overlay
+//************************************************************************//
+div.modal-dialog-background, .ui-widget-overlay {
+  display: none;
+  @include animation(fadein 0.4s);
+  background-color: transparent;
+  height: 100%;   // Fixes background display on iPad
+  left: 0;
+  position: fixed;
+  @include radial-gradient(50% 40%, circle cover, hsla(0, 0%, 0%, 0.20) 20%, hsla(0, 0%, 0%, 0.25) 35%, hsla(0, 0%, 0%, 0.7) 100%);
+  top: 0;
+  width: 100%;
+  z-index: 9998;
+}
+
+// Header Bar
+//************************************************************************//
+.dialog-header {
+  @include background-image(linear-gradient($header2, darken($header1, 25%)));
+  @include border-top-radius(4px);
+  @include box-shadow(inset 0 1px 0 rgba($d-base-border-color-alt, 0.3), // Inset Shadow at Top
+                            0 1px 0 hsla(0, 0%, 100%, 1.0));      // White Dropshadow
+  border-bottom: 1px solid darken(hsla(0, 0%, 20%, 1), 50%);
+  color: white;
+  font-size: 13px;
+  margin: 0;
+  padding: 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 1px hsla(0, 0%, 0%, 0.75);
+}
+
+
+// Modal Dialog Styles
+//************************************************************************//
+div.modal-dialog {
+  $dialog-width: 440px;
+
+  @extend .animation-zoom-in;    // Animation-keyframes
+  background: white;
+  @include border-radius(5px);
+  border: 1px solid darken($d-base-border-color, 10%);
+  @include box-shadow(0 6px 26px 0 hsla(0%, 0%, 0%, 0.75));
+  padding: 0;
+  @include vertically-and-horizontally-centered(100px, $dialog-width);
+  width: $dialog-width;
+  z-index: 9999;
+
+  h1 {
+    @extend .dialog-header;
+  }
+
+  div.inner-wrapper {
+    padding: 18px;
+    padding-bottom: 15px;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  div.buttons {
+    background-color: hsl(0, 0%, 93%);
+    @include border-bottom-radius(5px);
+    border-top: 1px solid hsl(0, 0%, 80%);
+    margin: 0;
+    padding: 10px 20px 12px;
+
+    button {
+      @include inline-block;
+      margin-top: 20px;
+      margin: 0;
+    }
+
+    button.submit,
+    input[type="submit"] {
+      float: right;
+      margin: 0;
+    }
+  }
+}
+
+
+//************************************************************************//
+// Mobile Media Query
+//************************************************************************//
+
+//iPad [portrait + landscape] - Fix background not covering entire document on scroll
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  div.modal-dialog {
+  background: hsla(0, 0%, 0%, 0.4); // remove gradient
+  height: 200%;
+  }
+}
+
+// iPhone
+@media screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2) {
+  div.modal-dialog {
+    $dialog-width: 300px;
+    margin-top: 0;
+    top: 20px;
+    @include vertically-and-horizontally-centered(100px, $dialog-width);
+    width: $dialog-width;
+
+    button, button.submit, button.cancel {
+      width: auto;
+      font-size: 15px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+
+  div.buttons {
+    @extend .clearfix;
+
+    button, .button, input[type="submit"] {
+      font-weight: bold;
+    }
+  }
+}

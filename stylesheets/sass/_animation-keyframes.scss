@@ -1,0 +1,54 @@
+//************************************************************************//
+// Animations
+//************************************************************************//
+
+// @extend fixes screen flicker of animations
+.force3d {
+  -webkit-backface-visibility: hidden;  // Fixes animation screen flicker
+  -webkit-perspective: 1000;            // Fixes animation screen flicker
+  -webkit-transform-style: preserve-3d; // Fixes animation screen flicker
+}
+
+// Fadein
+//************************************************************************//
+.animation-fadein {
+  @include animation(fadein 0.1s);
+}
+@mixin fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein { @include fadein; }
+   @-moz-keyframes fadein { @include fadein; }
+        @keyframes fadein { @include fadein; }
+
+
+// Modal Dialog zoom animation
+//************************************************************************//
+.animation-zoom-in {
+  @extend .force3d;
+  @include animation-duration(0.4s);
+  @include animation-name(zoom-in);
+  @include animation-timing-function($ease-out-sine);
+}
+@mixin zoom-in {
+  0% {
+    @include transform(scale3d(0, 0, 0)); // 3D Transform on iOS devices for smoother animations
+    opacity: 0.25;
+  }
+  75% {
+    @include transform(scale3d(1.18, 1.18, 0));
+    opacity: 0.25;
+  }
+  100% {
+    @include transform(scale3d(1, 1, 0));
+    opacity: 1.0;
+  }
+}
+@-webkit-keyframes zoom-in { @include zoom-in; }
+   @-moz-keyframes zoom-in { @include zoom-in; }
+        @keyframes zoom-in { @include zoom-in; }
