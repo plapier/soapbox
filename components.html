@@ -8,9 +8,8 @@ title: SoapBox UI Library
     <meta charset="utf-8">
     <meta name="description" content="">
     <title></title>
-    <link rel="stylesheet" href="stylesheets/base.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/components.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/forms.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/base-web.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/base-soapbox.css" media="screen">
   </head>
   <body class="components">
 
@@ -24,7 +23,7 @@ title: SoapBox UI Library
 
     <section class="content">
       <h1>Component Library</h1>
-      <p>Use these componenents via the markup and/or css provided.</p>
+      <p>Use these componenents via the markup and/or sass provided.</p>
       <section>
         <h2>Arrow</h2>
         <div class="panel">
@@ -32,7 +31,6 @@ title: SoapBox UI Library
           <button>Arrow-small <span class="arrow-small"></span></button>
         </div>
         <div class="panel">
-
 {% highlight html %}
 <span class="arrow"></span>
 <span class="arrow-small"></span>
@@ -41,9 +39,32 @@ title: SoapBox UI Library
 @extend .arrow;
 @extend .arrow-small;
 {% endhighlight %}
+        </div>
+      </section>
 
+      <section>
+        <h2>Dialog Box</h2>
+        <div class="panel one-thirds">
+          <button>Open Dialog</button>
+        </div>
+        <div class="panel two-thirds">
+{% highlight html %}
+<div class="modal-dialog-background">
+  <div class="modal-dialog">
+    <h1>Submit Quiz</h1>
+    <div class="inner-wrapper">
+      <p>You've completed the quiz. Submit the quiz to record your answers.</p>
+    </div>
+    <div class="buttons">
+      <button type="button" class="cancel">Cancel</button>
+      <button type="button" class="submit">Submit</button>
+    </div>
+  </div>
+{% endhighlight %}
+
+{% highlight scss %}
+{% endhighlight %}
       </div>
-
       </section>
     </section>
   </body>
