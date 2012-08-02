@@ -1,0 +1,12 @@
+.arrow, .arrow-small {
+  border: 6px solid transparent;
+  border-top-color: #333333;
+  display: inline-block;
+  height: 0;
+  margin-top: 3px;
+  vertical-align: top;
+  width: 0;
+  opacity: 0.5; }
+
+.arrow-small {
+  border-width: 5px; }

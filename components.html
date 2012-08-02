@@ -1,0 +1,48 @@
+---
+title: SoapBox UI Library
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/base.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/components.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/forms.css" media="screen">
+  </head>
+  <body>
+
+    <nav class="navigation">
+      <ol>
+        <li><a href="index.html">Forms</a></li>
+        <li><a href="components.html">Components</a></li>
+        <li><a href="https://github.com/plapier/soapbox/blob/gh-pages/stylesheets/sass/forms.scss">View Source</a></li>
+      </ol>
+    </nav>
+
+    <section class="content">
+      <section>
+        <h2>Arrow</h2>
+        <button>Arrow <span class="arrow"></span></button>
+
+        <button>Arrow-small<span class="arrow-small"></span></button>
+{% highlight html %}
+<span class="arrow"></span>
+
+<span class="arrow-small"></span>
+{% endhighlight %}
+
+<p>or</p>
+{% highlight scss %}
+@extend .arrow;
+@extend .arrow-small;
+{% endhighlight %}
+
+
+      </section>
+    </section>
+  </body>
+</html>
+
